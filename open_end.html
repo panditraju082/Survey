@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2B203A;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Survey Section */
+        .survey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 20px;
+        }
+
+        .survey-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .survey-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2B203A;
+        }
+
+        .survey-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .survey-form label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .survey-form input, .survey-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .survey-form input:focus, .survey-form textarea:focus {
+            border-color: #2B203A;
+            outline: none;
+            box-shadow: 0 0 5px rgba(43, 32, 58, 0.5);
+        }
+
+        .survey-form button {
+            padding: 12px;
+            background: #2B203A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .survey-form button:hover {
+            background: #1a1324;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="Company Logo">
+            </div>
+            <h1>NIDKARSH SIMPLE TRUST</h1>
+        </div>
+    </header>
+
+    <!-- Survey Form Section -->
+    <main>
+        <section class="survey-container">
+            <div class="survey-card">
+               
+                <form action="{% url 'Compleate' %}" method="post" class="survey-form">
+                    {% csrf_token %}
+                   
+                   <!-- <label for="name">Gender</label>
+                    <input type="text" name="gender" placeholder="Enter Gender" required>
+                
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Enter your email" required>
+                -->
+                    <label for="feedback">What is your favourite holiday? and why ?</label>
+                    <textarea name="open_end" id="feedback" rows="4" placeholder="Start Writing here..." required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

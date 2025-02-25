@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2B203A;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Survey Section */
+        .survey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 110%;
+            min-height: 40vh;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+        }
+
+        .survey-card {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Error Message */
+        .error-message {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        thead {
+            background-color: black;
+            color: white;
+            height: 50px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="Company Logo">
+            </div>
+            <h1>NIDKARSH SIMPLE TRUST</h1>
+        </div>
+    </header>
+
+    <!-- Survey Form Section -->
+    <main>
+        <h2 class="error-message">YOUR SURVEY IS COMPLETE</h2>
+        <section class="survey-container">
+            <div class="survey-card">
+                
+
+                <!-- Table -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project ID</th>
+                            <th>Res_ID</th>
+                            <th>Country</th>
+                            <th>IP address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SA1049 AT-1101</td>
+                            <td>{{ pid }}</td>
+                            <td>USA</td>
+                            <td>102.2301.11</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

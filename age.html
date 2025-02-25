@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2B203A;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Survey Section */
+        .survey-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 20px;
+        }
+
+        .survey-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .survey-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2B203A;
+        }
+
+        .survey-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .survey-form label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .survey-form input, .survey-form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .survey-form input:focus, .survey-form textarea:focus {
+            border-color: #2B203A;
+            outline: none;
+            box-shadow: 0 0 5px rgba(43, 32, 58, 0.5);
+        }
+
+        .survey-form button {
+            padding: 12px;
+            background: #2B203A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .survey-form button:hover {
+            background: #1a1324;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="Company Logo">
+            </div>
+            <h1>NIDKARSH SIMPLE TRUST</h1>
+        </div>
+    </header>
+
+    <!-- Survey Form Section -->
+    <main>
+<section class="survey-container">
+    <div class="survey-card">
+        <h2>Welcome</h2>
+        <form action="{% url 'Insertgender' %}" method="post" class="survey-form">
+            {% csrf_token %}
+            <label for="age">Select Your Age</label>
+            <select name="age" id="age" required>
+                <option value="" disabled selected>Select Age</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+            </select>            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+    </main>
+</body>
+</html>
